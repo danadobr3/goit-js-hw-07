@@ -32,7 +32,7 @@ function handlerClick(evt) {
     } 
     const source = evt.target.dataset.source;
     const instance = basicLightbox.create(`
-   <img src="${source}" alt="${e.target.alt}" />
+   <img src="${source}" alt="${evt.target.alt}" />
 `);
     instance.show();
 }
