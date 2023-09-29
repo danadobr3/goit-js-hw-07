@@ -5,9 +5,9 @@ console.log(galleryItems);
 
 const elementsList = document.querySelector('.gallery');
 
-elementsList.insertAdjacentHTML("beforeend", createMarkp(galleryItems));
+elementsList.insertAdjacentHTML("beforeend", createMarkup);
 
-function createMarkp(arr) {
+function createMarkup(arr) {
      
     return arr.map(({ preview, original, description }) => `
     <li class="gallery__item">
