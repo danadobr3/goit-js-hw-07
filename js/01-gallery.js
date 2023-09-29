@@ -26,9 +26,14 @@ function createMarkup(arr) {
 }
 
 function handlerClick(evt) { 
+     evt.preventDefault();
     if (evt.target === evt.currentTarget) {
         return;
-    }
-    console.log(evt.target);
-    const currentImage = evt.target.closest()
+    } 
+    const source = evt.target.dataset.source;
+    const instance = basicLightbox.create(`
+   <img src="${source}" alt="${e.target.alt}" />
+`);
+    instance.show();
 }
+console.log(basicLightbox);
