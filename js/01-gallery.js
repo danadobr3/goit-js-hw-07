@@ -5,7 +5,7 @@ console.log(galleryItems);
 
 const elementsList = document.querySelector('.gallery');
 
-elementsList.insertAdjacentHTML("beforeend", createMarkp(galleryItems))
+elementsList.insertAdjacentHTML("beforeend", createMarkp(galleryItems));
 
 function createMarkp(arr) {
      
