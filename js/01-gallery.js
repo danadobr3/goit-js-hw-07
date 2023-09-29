@@ -5,7 +5,10 @@ console.log(galleryItems);
 
 const elementsList = document.querySelector('.gallery');
 
-elementsList.insertAdjacentHTML("beforeend", createMarkup);
+elementsList.insertAdjacentHTML("beforeend", createMarkup(galleryItems));
+
+elementsList.addEventListener('click', handlerClick);
+
 
 function createMarkup(arr) {
      
@@ -20,4 +23,12 @@ function createMarkup(arr) {
     />
   </a>
 </li>`).join('')
+}
+
+function handlerClick(evt) { 
+    if (evt.target === evt.currentTarget) {
+        return;
+    }
+    console.log(evt.target);
+    const currentImage = evt.target.closest()
 }
