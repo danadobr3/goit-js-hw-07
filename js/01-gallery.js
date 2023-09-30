@@ -25,6 +25,8 @@ function createMarkup(arr) {
 </li>`).join('')
 }
 
+let modalIsOpen = false;
+
 function handlerClick(evt) { 
      evt.preventDefault();
     if (evt.target === evt.currentTarget) {
@@ -35,5 +37,18 @@ function handlerClick(evt) {
    <img src="${source}" alt="${evt.target.alt}" />
 `);
     instance.show();
+    isModalOpen = true;
+    document.addEventListener('keydown', keyDown);
+}
+function keyDown(evt) {
+    if (evt.key === 'Escape' && modalIsOpen) {
+        const instance = basicLightbox.getInstance();
+        if (instance) {
+            instance.close();
+            modalIsOpen = false;
+            document.removeEventListener('keydown', keyDown);
+        }
+    }
 }
 console.log(basicLightbox);
+
