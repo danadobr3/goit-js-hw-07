@@ -25,6 +25,8 @@ function createMarkup(arr) {
 </li>`).join('')
 }
 
+let modalIsOpen = false;
+
 function handlerClick(evt) { 
     evt.preventDefault();
     const target = evt.target;
