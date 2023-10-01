@@ -16,7 +16,7 @@ const markup = galleryItems.map(({ preview, original, description }) => {
 }).join('');
 elementsList.innerHTML = markup;
 
-elementsList.insertAdjacentHTML('afterbegin', markup)
+
 
 
 
