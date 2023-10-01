@@ -6,11 +6,18 @@ console.log(galleryItems);
 
 const elementsList = document.querySelector('.gallery');
 
-const markup = cats.map(link => `
+const markup = galleryItems.map(({ preview, original, description }) => {
+    return `
  <li class="gallery__item">
    <a class="gallery__link" href="${original}">
       <img class="gallery__image" src="${preview}" alt="${description}" />
    </a>
-</li>`).join('')
+</li>`;
+}).join('');
+elementsList.innerHTML = markup;
 
-elementsList.insertAdjacentHTML('afterbegin', markup )
+elementsList.insertAdjacentHTML('afterbegin', markup)
+
+
+
+
