@@ -29,16 +29,18 @@ let modalIsOpen = false;
 
 function handlerClick(evt) { 
     evt.preventDefault();
-    const target = evt.target;
-    if (target.classList.contains('gallery__image')) {
-        const originalImageUrl = target.dataset.source;
-         modal = basicLightbox.create(`
-         <img src="${originalImageUrl}" width="800" height="600">
-         `);
-         modal.show();
-         modalIsOpen = true;
-     }
-     document.addEventListener('keydown', keyDown);
+    if (evt.target.nodeName !== "IMG") {
+        return;
+    }
+    const instance = basicLightBox.create(`
+    <img src="${evt.target.dataset.source}" width="800" height="600">`);
+    instance.show();
+    elementsList.addEventListener('keydown', (evt) => {
+        if (evt.code === "Escape") {
+            instance.close();
+        }
+    });
+   
  }
 
 
