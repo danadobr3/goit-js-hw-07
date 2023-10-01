@@ -18,7 +18,6 @@ function createMarkup(arr) {
     <img
       class="gallery__image"
       src="${preview}"
-      data-source="large-image.jpg"
       alt="${description}"
     />
   </a>
