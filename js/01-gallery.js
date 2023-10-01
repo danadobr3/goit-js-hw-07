@@ -25,8 +25,6 @@ function createMarkup(arr) {
 </li>`).join('')
 }
 
-let modalIsOpen = false;
-
 function handlerClick(evt) { 
     evt.preventDefault();
     if (evt.target.nodeName !== "IMG") {
