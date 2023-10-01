@@ -16,7 +16,7 @@ const markup = galleryItems.map(({ preview, original, description }) => {
 }).join('');
 elementsList.innerHTML = markup;
 
-new simpleLightbox('.gallery a' < {
+new simpleLightbox('.gallery a' , {
     captionDelay: 250,
     captionsData: 'alt',
 });
