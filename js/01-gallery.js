@@ -25,30 +25,26 @@ function createMarkup(arr) {
 </li>`).join('')
 }
 
-let modalIsOpen = false;
-
 function handlerClick(evt) { 
-     evt.preventDefault();
-    if (evt.target === evt.currentTarget) {
-        return;
-    } 
-    const source = evt.target.dataset.source;
-    const instance = basicLightbox.create(`
-   <img src="${source}" alt="${evt.target.alt}" />
-`);
-    instance.show();
-    isModalOpen = true;
-    document.addEventListener('keydown', keyDown);
-}
-function keyDown(evt) {
-    if (evt.key === 'Escape' && modalIsOpen) {
-        const instance = basicLightbox.getInstance();
-        if (instance) {
-            instance.close();
-            modalIsOpen = false;
-            document.removeEventListener('keydown', keyDown);
-        }
-    }
-}
-console.log(basicLightbox);
+    evt.preventDefault();
+    const target = evt.target;
+    if (target.classList.contains('gallery__image')) {
+        const originalImageUrl = target.dataset.source;
+         modal = basicLightbox.create(`
+         <img src="${originalImageUrl}" width="800" height="600">
+         `);
+         modal.show();
+         modalIsOpen = true;
+     }
+     document.addEventListener('keydown', keyDown);
+ }
+
+
+
+
+
+
+
+
+
 
