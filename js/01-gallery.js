@@ -18,6 +18,7 @@ function createMarkup(arr) {
     <img
       class="gallery__image"
       src="${preview}"
+      data-source="${original}"
       alt="${description}"
     />
   </a>
